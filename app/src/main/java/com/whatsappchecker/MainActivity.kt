@@ -104,7 +104,8 @@ class MainActivity : AppCompatActivity() {
                 showError(getString(R.string.error_whatsapp_not_installed))
             }
         } catch (e: Exception) {
-            showError("Error: ${e.localizedMessage}")
+            // Don't expose internal error details to users
+            showError("Unable to open WhatsApp. Please try again.")
         }
     }
 

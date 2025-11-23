@@ -5,17 +5,39 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep line numbers for crash reports
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep custom exceptions
+-keep public class * extends java.lang.Exception
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# ViewBinding
+-keep class * implements androidx.viewbinding.ViewBinding {
+    public static ** bind(android.view.View);
+    public static ** inflate(android.view.LayoutInflater);
+}
+
+# Keep CountryCode data class
+-keep class com.whatsappchecker.CountryCode {
+    *;
+}
+
+# Material Components
+-keep class com.google.android.material.** { *; }
+-dontwarn com.google.android.material.**
+
+# AndroidX
+-keep class androidx.** { *; }
+-dontwarn androidx.**
+
+# Kotlin
+-keep class kotlin.** { *; }
+-dontwarn kotlin.**
+
+# Remove logging in release
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+    public static *** i(...);
+}

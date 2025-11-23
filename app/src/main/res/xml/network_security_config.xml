@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Enforce HTTPS for all network connections -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Allow only HTTPS connections to wa.me -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">wa.me</domain>
+        <domain includeSubdomains="true">whatsapp.com</domain>
+    </domain-config>
+</network-security-config>
