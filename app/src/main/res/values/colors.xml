@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#128C7E</color>
+    <color name="primary_dark">#075E54</color>
+    <color name="primary_light">#25D366</color>
+    <color name="accent">#25D366</color>
+
+    <!-- UI Colors -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#F5F5F5</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="error">#D32F2F</color>
+    <color name="success">#25D366</color>
+    <color name="warning">#FFA726</color>
+
+    <!-- Additional Colors -->
+    <color name="divider">#E0E0E0</color>
+    <color name="shadow">#1A000000</color>
+    <color name="overlay">#80000000</color>
+
+    <!-- Material Design Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

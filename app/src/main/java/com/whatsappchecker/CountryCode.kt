@@ -1,0 +1,90 @@
+package com.whatsappchecker
+
+data class CountryCode(
+    val name: String,
+    val code: String,
+    val flag: String
+) {
+    override fun toString(): String {
+        return "$flag $name ($code)"
+    }
+
+    companion object {
+        fun getAllCountries(): List<CountryCode> {
+            return listOf(
+                CountryCode("United States", "+1", "🇺🇸"),
+                CountryCode("United Kingdom", "+44", "🇬🇧"),
+                CountryCode("India", "+91", "🇮🇳"),
+                CountryCode("Canada", "+1", "🇨🇦"),
+                CountryCode("Australia", "+61", "🇦🇺"),
+                CountryCode("Germany", "+49", "🇩🇪"),
+                CountryCode("France", "+33", "🇫🇷"),
+                CountryCode("Italy", "+39", "🇮🇹"),
+                CountryCode("Spain", "+34", "🇪🇸"),
+                CountryCode("Japan", "+81", "🇯🇵"),
+                CountryCode("China", "+86", "🇨🇳"),
+                CountryCode("Brazil", "+55", "🇧🇷"),
+                CountryCode("Mexico", "+52", "🇲🇽"),
+                CountryCode("Russia", "+7", "🇷🇺"),
+                CountryCode("South Korea", "+82", "🇰🇷"),
+                CountryCode("Indonesia", "+62", "🇮🇩"),
+                CountryCode("Turkey", "+90", "🇹🇷"),
+                CountryCode("Saudi Arabia", "+966", "🇸🇦"),
+                CountryCode("United Arab Emirates", "+971", "🇦🇪"),
+                CountryCode("South Africa", "+27", "🇿🇦"),
+                CountryCode("Nigeria", "+234", "🇳🇬"),
+                CountryCode("Egypt", "+20", "🇪🇬"),
+                CountryCode("Argentina", "+54", "🇦🇷"),
+                CountryCode("Colombia", "+57", "🇨🇴"),
+                CountryCode("Chile", "+56", "🇨🇱"),
+                CountryCode("Peru", "+51", "🇵🇪"),
+                CountryCode("Venezuela", "+58", "🇻🇪"),
+                CountryCode("Pakistan", "+92", "🇵🇰"),
+                CountryCode("Bangladesh", "+880", "🇧🇩"),
+                CountryCode("Philippines", "+63", "🇵🇭"),
+                CountryCode("Vietnam", "+84", "🇻🇳"),
+                CountryCode("Thailand", "+66", "🇹🇭"),
+                CountryCode("Malaysia", "+60", "🇲🇾"),
+                CountryCode("Singapore", "+65", "🇸🇬"),
+                CountryCode("New Zealand", "+64", "🇳🇿"),
+                CountryCode("Netherlands", "+31", "🇳🇱"),
+                CountryCode("Belgium", "+32", "🇧🇪"),
+                CountryCode("Switzerland", "+41", "🇨🇭"),
+                CountryCode("Austria", "+43", "🇦🇹"),
+                CountryCode("Poland", "+48", "🇵🇱"),
+                CountryCode("Sweden", "+46", "🇸🇪"),
+                CountryCode("Norway", "+47", "🇳🇴"),
+                CountryCode("Denmark", "+45", "🇩🇰"),
+                CountryCode("Finland", "+358", "🇫🇮"),
+                CountryCode("Greece", "+30", "🇬🇷"),
+                CountryCode("Portugal", "+351", "🇵🇹"),
+                CountryCode("Czech Republic", "+420", "🇨🇿"),
+                CountryCode("Hungary", "+36", "🇭🇺"),
+                CountryCode("Romania", "+40", "🇷🇴"),
+                CountryCode("Ukraine", "+380", "🇺🇦"),
+                CountryCode("Israel", "+972", "🇮🇱"),
+                CountryCode("Kenya", "+254", "🇰🇪"),
+                CountryCode("Ghana", "+233", "🇬🇭"),
+                CountryCode("Morocco", "+212", "🇲🇦"),
+                CountryCode("Algeria", "+213", "🇩🇿"),
+                CountryCode("Tunisia", "+216", "🇹🇳"),
+                CountryCode("Qatar", "+974", "🇶🇦"),
+                CountryCode("Kuwait", "+965", "🇰🇼"),
+                CountryCode("Bahrain", "+973", "🇧🇭"),
+                CountryCode("Oman", "+968", "🇴🇲"),
+                CountryCode("Jordan", "+962", "🇯🇴"),
+                CountryCode("Lebanon", "+961", "🇱🇧"),
+                CountryCode("Iraq", "+964", "🇮🇶"),
+                CountryCode("Iran", "+98", "🇮🇷"),
+                CountryCode("Afghanistan", "+93", "🇦🇫"),
+                CountryCode("Sri Lanka", "+94", "🇱🇰"),
+                CountryCode("Nepal", "+977", "🇳🇵"),
+                CountryCode("Myanmar", "+95", "🇲🇲"),
+                CountryCode("Cambodia", "+855", "🇰🇭"),
+                CountryCode("Hong Kong", "+852", "🇭🇰"),
+                CountryCode("Taiwan", "+886", "🇹🇼"),
+                CountryCode("Macau", "+853", "🇲🇴")
+            ).sortedBy { it.name }
+        }
+    }
+}
