@@ -3,10 +3,8 @@
     <!-- Base application theme -->
     <style name="Base.Theme.WhatsAppChecker" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/accent</item>
-        <item name="colorSecondaryVariant">@color/primary_light</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:statusBarColor">@color/primary</item>
         <item name="android:navigationBarColor">@color/white</item>
@@ -17,12 +15,10 @@
     <style name="Theme.WhatsAppChecker" parent="Base.Theme.WhatsAppChecker" />
 
     <!-- Splash Screen Theme -->
-    <style name="Theme.WhatsAppChecker.Splash" parent="Theme.WhatsAppChecker">
-        <item name="android:windowBackground">@drawable/splash_background</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
+    <style name="Theme.WhatsAppChecker.Splash" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
     </style>
 
     <!-- Button Styles -->
