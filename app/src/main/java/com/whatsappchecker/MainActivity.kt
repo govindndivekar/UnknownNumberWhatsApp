@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         setupCountryCodeDropdown()
         setupClickListeners()
+        setupBackPressHandler()
     }
 
     private fun setupCountryCodeDropdown() {
@@ -131,15 +133,19 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    override fun onBackPressed() {
-        if (backPressedTime + backPressInterval > System.currentTimeMillis()) {
-            // Second back press - show exit dialog
-            showExitDialog()
-        } else {
-            // First back press - show toast
-            Toast.makeText(this, getString(R.string.exit_toast), Toast.LENGTH_SHORT).show()
-        }
-        backPressedTime = System.currentTimeMillis()
+    private fun setupBackPressHandler() {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + backPressInterval > System.currentTimeMillis()) {
+                    // Second back press - show exit dialog
+                    showExitDialog()
+                } else {
+                    // First back press - show toast
+                    Toast.makeText(this@MainActivity, getString(R.string.exit_toast), Toast.LENGTH_SHORT).show()
+                }
+                backPressedTime = System.currentTimeMillis()
+            }
+        })
     }
 
     private fun showExitDialog() {
