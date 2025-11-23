@@ -93,26 +93,15 @@ class MainActivity : AppCompatActivity() {
             val countryCode = selectedCountryCode?.code?.replace("+", "") ?: ""
             val whatsappUrl = "https://wa.me/$countryCode$cleanNumber"
 
-            // Try to open WhatsApp
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse(whatsappUrl)
-            }
+            // Create intent to open WhatsApp/Browser
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(whatsappUrl))
 
-            // Check if WhatsApp is installed
-            val packageManager = packageManager
-            val activities = packageManager.queryIntentActivities(intent, 0)
-
-            if (activities.isNotEmpty()) {
+            // Try to start the activity
+            try {
                 startActivity(intent)
                 showSuccess(getString(R.string.success_user_found))
-            } else {
-                // WhatsApp not installed, try to open in browser
-                try {
-                    intent.setPackage(null) // Remove package filter to allow browser
-                    startActivity(intent)
-                } catch (e: ActivityNotFoundException) {
-                    showError(getString(R.string.error_whatsapp_not_installed))
-                }
+            } catch (e: ActivityNotFoundException) {
+                showError(getString(R.string.error_whatsapp_not_installed))
             }
         } catch (e: Exception) {
             showError("Error: ${e.localizedMessage}")
