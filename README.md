@@ -266,7 +266,7 @@ limitations under the License.
 
 ## 👨‍💻 Developer
 
-**Govind Nandkishor Divekar**
+**Govind Nagesh Divekar**
 
 ## 🤝 Contributing
 
